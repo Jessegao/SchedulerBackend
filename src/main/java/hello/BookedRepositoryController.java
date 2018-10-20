@@ -19,10 +19,14 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 // handles requests to http://localhost:8080/bookedDate
 public class BookedRepositoryController {
+
+    private int MAX_BOOKING_DAYS = 3;
+
     @Autowired
     private BookingRepository repository;
 
@@ -36,7 +40,7 @@ public class BookedRepositoryController {
             System.out.println("Not a valid date format: must be in \"yyyy/MM/dd\" format");
             return new ArrayList<Booking>();
         }
-        return repository.findByBookedDateBetween(sdf.format(now), sdf.format(endDate));
+        return repository.findBy_idBetween(sdf.format(now), sdf.format(endDate));
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -54,14 +58,20 @@ public class BookedRepositoryController {
         c.setTime(now);
         c.add(Calendar.DATE, timeInDays);
         Date endDate = c.getTime();
-        return repository.findByBookedDateBetween(sdf.format(now), sdf.format(endDate));
+        return repository.findBy_idBetween(sdf.format(now), sdf.format(endDate));
+    }
+
+    // credit: https://stackoverflow.com/questions/1555262/calculating-the-difference-between-two-java-date-instances
+    public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillies = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public Booking createBooking(@Valid @RequestBody Booking booking) {
         booking.set_id(booking.getBookedDate());
 
-        // Check that the reservation is valid
+        // Check that the reservation is within valid reservation periods
         Date in = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         LocalDateTime ldt = LocalDateTime.ofInstant(in.toInstant(), ZoneId.systemDefault());
@@ -89,12 +99,39 @@ public class BookedRepositoryController {
                 booking.setStatus("Not available");
                 return booking;
             }
-            // Sets session
-//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
+            // creates an entry for each day booked
             LocalDateTime local = LocalDateTime.now();
-            booking.setSession(local.toString());
-            booking.setStatus("Booked");
-            repository.save(booking);
+            Date start;
+            Date end;
+            try {
+                start = sdf.parse(booking.getBookedDate());
+                end = sdf.parse(booking.getDepartureDate());
+            } catch (Exception e) {
+                booking.setStatus("Not a valid date format: must be in \"yyyy/MM/dd\" format");
+                return booking;
+            }
+
+            // Check the reserved interval isn't over 3 days
+            if (getDateDiff(start, end, TimeUnit.DAYS) > 3.0){
+                booking.setStatus(String.format("Reservation can be at max %2d days", MAX_BOOKING_DAYS));
+                return booking;
+            }
+
+            c.setTime(start);
+            for (int i = 0; i < MAX_BOOKING_DAYS; i++){
+                if (c.getTime().before(end)) {
+                    Booking individualDays = new Booking(booking, sdf.format(c.getTime()));
+                    c.add(Calendar.DATE, 1);
+                    // Sets session
+                    String session = local.toString() + booking.getFullname();
+                    booking.setSession(session);
+                    booking.setStatus("Booked");
+                    repository.save(booking);
+                } else {
+                    break;
+                }
+            }
         }
 
         return booking;
@@ -110,16 +147,24 @@ public class BookedRepositoryController {
 //        return new Booking("", "", "", id, "", "Available");
 //    }
 
-//    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-//    public void modifyBookingById(@PathVariable("id") ObjectId id, @Valid @RequestBody Pets pets) {
-//        pets.set_id(id);
-//        repository.save(pets);
-//    }
+    @RequestMapping(value = "/{session}", method = RequestMethod.PUT)
+    public void modifyBookingById(@PathVariable("session") String session, @Valid @RequestBody Booking booking) {
+        booking.set_id(booking.getBookedDate());
+        List<Booking> b = repository.findBySession(session);
+//        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
+        synchronized (this) {
+            
+            if (getBookingsByDateRange(booking.getBookedDate(), booking.getDepartureDate()).isEmpty()) {
+                createBooking(booking);
+            }
+        }
+//        }
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.DELETE)
     public void deleteBooking(@Valid @RequestBody Booking booking) {
         Optional<Booking> b = repository.findById(booking.get_id());
-        if (b.isPresent()) {
+        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
             repository.delete(b.get());
         }
     }

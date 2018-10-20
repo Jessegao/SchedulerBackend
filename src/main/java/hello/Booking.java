@@ -29,8 +29,29 @@ public class Booking {
         this.status = status;
     }
 
+    public Booking(String _id, String fullname, String email, String session, String bookedDate,String departureDate, String status) {
+        this.fullname = fullname;
+        this.email = email;
+        this.session = session;
+        this.bookedDate = bookedDate;
+        this.departureDate = departureDate;
+//        this._id = format.format(bookedDate);
+        this._id = _id;
+        this.status = status;
+    }
+
     public Booking() {
 
+    }
+
+    public Booking(Booking another, String _id) {
+        this.fullname = another.fullname;
+        this.email = another.email;
+        this.session = another.session;
+        this.bookedDate = another.bookedDate;
+        this.departureDate = another.departureDate;
+        this._id = _id;
+        this.status = another.status;
     }
 
     public String getFullname() {

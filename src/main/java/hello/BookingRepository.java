@@ -12,5 +12,9 @@ public interface BookingRepository extends MongoRepository<Booking, String> {
 
     List<Booking> findBy_id(String _id);
 
-    List<Booking> findByBookedDateBetween(String start, String end);
+    List<Booking> findBy_idBetween(String start, String end);
+
+    List<Booking> findBySession(String session);
+
+    void deleteBySession(String session);
 }
