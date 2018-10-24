@@ -153,9 +153,13 @@ public class BookedRepositoryController {
         List<Booking> b = repository.findBySession(session);
 //        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
         synchronized (this) {
-            
-            if (getBookingsByDateRange(booking.getBookedDate(), booking.getDepartureDate()).isEmpty()) {
-                createBooking(booking);
+            for (Booking oldDate:b) {
+                deleteBooking(oldDate);
+            }
+            if (createBooking(booking).getStatus() != "Booked") {
+                for (Booking oldDate:b) {
+                    repository.save(oldDate);
+                }
             }
         }
 //        }
@@ -163,9 +167,12 @@ public class BookedRepositoryController {
 
     @RequestMapping(value = "/", method = RequestMethod.DELETE)
     public void deleteBooking(@Valid @RequestBody Booking booking) {
-        Optional<Booking> b = repository.findById(booking.get_id());
-        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
-            repository.delete(b.get());
+        List<Booking> bookings = repository.findBySession(booking.get_id());
+//        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
+//            repository.delete(b.get());
+//        }
+        for (Booking b:bookings) {
+            repository.delete((b));
         }
     }
 }
