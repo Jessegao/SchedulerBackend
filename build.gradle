@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
-        testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 }
 
@@ -15,7 +14,6 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'spring-boot'
 
 bootJar {
     baseName = 'gs-accessing-mongodb-data-rest'
