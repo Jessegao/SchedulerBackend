@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -60,18 +61,22 @@ public class ApplicationTests {
 		c.add(Calendar.DATE, 1);
 		String validDepartureDate = sdf.format(c.getTime());
 
-		mockMvc.perform(post("/").content(
+		mockMvc.perform(post("/").contentType(MediaType.APPLICATION_JSON).content(
 				"{\"_id\": \"\"," +
-				" \"fullname\":\"jesse\"" +
-				" \"email\":\"gmail\"" +
-				" \"session\":\"\"}" +
-				" \"bookedDate\":\"" + validDate + "\"" +
-				" \"departureDate\"" + validDepartureDate + "\"" +
+				" \"fullname\":\"jesse\"," +
+				" \"email\":\"gmail\"," +
+				" \"session\":\"\"," +
+				" \"bookedDate\":\"" + validDate + "\"," +
+				" \"departureDate\":\"" + validDepartureDate + "\"," +
 				" \"status\":\"\"}"
 				)).andExpect(
-						status().isCreated()).andExpect(
+						status().isOk()).andExpect(
 				jsonPath("$._id").value(validDate)).andExpect(
-				jsonPath("$.lastName").value("Baggins"));
+				jsonPath("$.fullname").value("jesse")).andExpect(
+				jsonPath("$.email").value("gmail")).andExpect(
+				jsonPath("$.bookedDate").value(validDate)).andExpect(
+				jsonPath("$.departureDate").value(validDepartureDate)).andExpect(
+				jsonPath("$.status").value("Booked"));
 	}
 
 	@Test

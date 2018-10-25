@@ -148,14 +148,12 @@ public class BookedRepositoryController {
 //    }
 
     @RequestMapping(value = "/{session}", method = RequestMethod.PUT)
-    public void modifyBookingById(@PathVariable("session") String session, @Valid @RequestBody Booking booking) {
+    public void modifyBookingBySession(@PathVariable("session") String session, @Valid @RequestBody Booking booking) {
         booking.set_id(booking.getBookedDate());
         List<Booking> b = repository.findBySession(session);
 //        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
         synchronized (this) {
-            for (Booking oldDate:b) {
-                deleteBooking(oldDate);
-            }
+            deleteBooking(session);
             if (createBooking(booking).getStatus() != "Booked") {
                 for (Booking oldDate:b) {
                     repository.save(oldDate);
@@ -165,9 +163,9 @@ public class BookedRepositoryController {
 //        }
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.DELETE)
-    public void deleteBooking(@Valid @RequestBody Booking booking) {
-        List<Booking> bookings = repository.findBySession(booking.get_id());
+    @RequestMapping(value = "/{session}", method = RequestMethod.DELETE)
+    public void deleteBooking(@PathVariable("session") String session) {
+        List<Booking> bookings = repository.findBySession(session);
 //        if (b.isPresent() && b.get().getSession() == booking.getSession()) {
 //            repository.delete(b.get());
 //        }
