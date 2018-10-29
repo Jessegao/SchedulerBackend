@@ -45,7 +45,15 @@ public class BookedRepositoryController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Booking> getAllBookings() {
-        return repository.findAll();
+        Date in = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        LocalDateTime ldt = LocalDateTime.ofInstant(in.toInstant(), ZoneId.systemDefault());
+        Date now = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
+        Calendar c = Calendar.getInstance();
+        c.setTime(now);
+        c.add(Calendar.DATE, 30);
+        Date endDate = c.getTime();
+        return repository.findBy_idBetween(sdf.format(now), sdf.format(endDate));
     }
 
     @RequestMapping(value = "/{timeInDays}", method = RequestMethod.GET)

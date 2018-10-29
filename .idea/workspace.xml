@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1665fb22-c780-4271-85e9-03e797eaa936" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/hello/BookedRepositoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/hello/BookedRepositoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/hello/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/hello/ApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/BookedRepositoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/BookedRepositoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hello/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hello/ApplicationTests.java" afterDir="false" />
     </list>
@@ -24,17 +27,18 @@
     <session id="2097661917">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -58,14 +62,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="14" />
-          <entry key="java" value="4535" />
+          <entry key="java" value="5364" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="14" />
-          <entry key="JAVA" value="4535" />
+          <entry key="JAVA" value="5364" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
@@ -88,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/BookedRepositoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="155" column="33" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+            <state relative-caret-position="561">
+              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/hello/ApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state relative-caret-position="1919">
+              <caret line="316" column="28" selection-start-line="316" selection-start-column="28" selection-end-line="316" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -576,7 +580,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -635,11 +639,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540461702499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540786289224" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../demo/demo/java-json.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -663,35 +667,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTests.shouldCreateEntity">
-    <configuration name="ApplicationTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="initial_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello" />
-      <option name="MAIN_CLASS_NAME" value="hello.ApplicationTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="initial_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello" />
-      <option name="MAIN_CLASS_NAME" value="hello.ApplicationTests" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ApplicationTests.testManyDifferentConcurrentConflictingBooking">
     <configuration name="ApplicationTests.shouldCreateEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="initial_test" />
       <extension name="coverage">
@@ -724,7 +700,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.shouldReturnRepositoryIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationTests.testManyDifferentConcurrentConflictingBooking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="initial_test" />
       <extension name="coverage">
         <pattern>
@@ -734,26 +710,58 @@
       </extension>
       <option name="PACKAGE_NAME" value="hello" />
       <option name="MAIN_CLASS_NAME" value="hello.ApplicationTests" />
-      <option name="METHOD_NAME" value="shouldReturnRepositoryIndex" />
+      <option name="METHOD_NAME" value="testManyDifferentConcurrentConflictingBooking" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.testMultithreaded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="initial_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello" />
+      <option name="MAIN_CLASS_NAME" value="hello.ApplicationTests" />
+      <option name="METHOD_NAME" value="testMultithreaded" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.testTwoConcurrentNonConflictingBooking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="initial_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello" />
+      <option name="MAIN_CLASS_NAME" value="hello.ApplicationTests" />
+      <option name="METHOD_NAME" value="testTwoConcurrentNonConflictingBooking" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApplicationTest (1)" />
-      <item itemvalue="JUnit.ApplicationTests.shouldReturnRepositoryIndex" />
-      <item itemvalue="JUnit.ApplicationTests" />
       <item itemvalue="JUnit.ApplicationTests.shouldCreateEntity" />
       <item itemvalue="JUnit.ApplicationTests.shouldRetrieveEntity" />
+      <item itemvalue="JUnit.ApplicationTests.testMultithreaded" />
+      <item itemvalue="JUnit.ApplicationTests.testTwoConcurrentNonConflictingBooking" />
+      <item itemvalue="JUnit.ApplicationTests.testManyDifferentConcurrentConflictingBooking" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApplicationTests.shouldCreateEntity" />
+        <item itemvalue="JUnit.ApplicationTests.testManyDifferentConcurrentConflictingBooking" />
+        <item itemvalue="JUnit.ApplicationTests.testTwoConcurrentNonConflictingBooking" />
         <item itemvalue="JUnit.ApplicationTests.shouldRetrieveEntity" />
-        <item itemvalue="JUnit.ApplicationTests.shouldReturnRepositoryIndex" />
-        <item itemvalue="JUnit.ApplicationTests" />
-        <item itemvalue="JUnit.ApplicationTest (1)" />
+        <item itemvalue="JUnit.ApplicationTests.testMultithreaded" />
+        <item itemvalue="JUnit.ApplicationTests.shouldCreateEntity" />
       </list>
     </recent_temporary>
   </component>
@@ -771,27 +779,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ApplicationTests - 2018.10.25 at 02h 17m 13s.xml">
-      <configuration name="ApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests - 2018.10.25 at 02h 17m 39s.xml">
-      <configuration name="ApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests - 2018.10.25 at 02h 19m 14s.xml">
-      <configuration name="ApplicationTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests_shouldReturnRepositoryIndex - 2018.10.25 at 02h 20m 17s.xml">
-      <configuration name="ApplicationTests.shouldReturnRepositoryIndex" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 40m 41s.xml">
-      <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 42m 27s.xml">
-      <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 44m 01s.xml">
-      <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 46m 39s.xml">
       <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
     </history-entry>
@@ -801,12 +788,33 @@
     <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 56m 54s.xml">
       <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 02h 59m 58s.xml">
+      <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_shouldCreateEntity - 2018.10.25 at 03h 01m 53s.xml">
+      <configuration name="ApplicationTests.shouldCreateEntity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_testMultithreaded - 2018.10.27 at 17h 53m 13s.xml">
+      <configuration name="ApplicationTests.testMultithreaded" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_shouldRetrieveEntity - 2018.10.28 at 16h 07m 00s.xml">
+      <configuration name="ApplicationTests.shouldRetrieveEntity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_shouldRetrieveEntity - 2018.10.28 at 16h 07m 35s.xml">
+      <configuration name="ApplicationTests.shouldRetrieveEntity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_shouldRetrieveEntity - 2018.10.28 at 16h 22m 05s.xml">
+      <configuration name="ApplicationTests.shouldRetrieveEntity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ApplicationTests_testTwoConcurrentNonConflictingBooking - 2018.10.28 at 21h 06m 48s.xml">
+      <configuration name="ApplicationTests.testTwoConcurrentNonConflictingBooking" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25449872" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26092544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -868,6 +876,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/BookedRepositoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -904,20 +922,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/BookedRepositoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="155" column="33" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/hello/ApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="1919">
+          <caret line="316" column="28" selection-start-line="316" selection-start-column="28" selection-end-line="316" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
